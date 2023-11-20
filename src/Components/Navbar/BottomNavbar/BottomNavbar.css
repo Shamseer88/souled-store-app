@@ -1,0 +1,47 @@
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 15px;
+  box-shadow: var(--box-shadow-primary);
+}
+
+.left {
+  display: flex;
+  gap: 1rem;
+}
+
+.left p {
+  text-transform: uppercase;
+  color: var(--color-text-navbar);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.hamburger-mewnu {
+  cursor: pointer;
+  display: none;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-icons {
+  cursor: pointer;
+  color: var(--color-text-navbar);
+}
+.navbar-icons:hover {
+  color: var(--color-green);
+}
+
+@media only screen and (max-width: 720px) {
+  .left p {
+    display: none;
+  }
+  .hamburger-mewnu {
+    display: block;
+  }
+}
