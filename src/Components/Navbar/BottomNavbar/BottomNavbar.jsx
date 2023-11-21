@@ -1,9 +1,10 @@
 import "./BottomNavbar.css";
-import { SlHandbag, SlHeart, SlUser } from "react-icons/sl";
+import { SlHandbag, SlHeart } from "react-icons/sl";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../../Provider/UserProvider";
 import Profile from "../../Profile/Profile";
+import CartComponent from "../../CartComponent/CartComponent";
 
 export default function BottomNavbar() {
   const { setUserContext: signOutContext, isUserLoggedIn } = useUser();
@@ -26,7 +27,7 @@ export default function BottomNavbar() {
         <input type="text" placeholder="Search..." />
         <Profile />
         <SlHeart size={20} className="navbar-icons" />
-        <SlHandbag size={20} className="navbar-icons" />
+        <CartComponent />
       </div>
     </nav>
   );

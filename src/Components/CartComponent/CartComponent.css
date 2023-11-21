@@ -1,0 +1,8 @@
+.cart-component {
+  display: flex;
+}
+
+.cart-component span {
+  margin-top: -5px;
+  color: var(--color-red-primary);
+}

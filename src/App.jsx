@@ -7,6 +7,7 @@ import Men from "./Pages/Men/Men";
 import Women from "./Pages/Women/Women";
 import SignIn from "./Pages/Auth/SignIn";
 import SignUp from "./Pages/Auth/SignUp";
+import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/women" element={<Women />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/single-product/:id" element={<SingleProduct />} />
       </Routes>
     </>
   );
