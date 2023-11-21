@@ -1,0 +1,6 @@
+.loader-div {
+  display: flex;
+  height: 10rem;
+  justify-content: center;
+  align-items: center;
+}

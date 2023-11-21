@@ -1,12 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./SingleProduct.css";
 import { FaRegHeart } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../Provider/ProductContext";
+import PageNavigation from "../../Components/PageNavigation/PageNavigation";
+import Loader from "../../Components/Loader/Loader";
+import Star from "../../Components/Star/Star";
 
 const API = "https://academics.newtonschool.co/api/v1/ecommerce/product/";
 
 export default function SingleProduct() {
+  const [mainImage, setMainImage] = useState(0);
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
   const { id } = useParams();
@@ -18,29 +22,35 @@ export default function SingleProduct() {
 
   console.log(singleProduct);
   if (isSingleLoading) {
-    return (
-      <h3
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "50px",
-        }}
-      >
-        .....Loading
-      </h3>
-    );
+    return <Loader />;
   }
-  const { images, name, brand, subCategory, price, size, description } =
-    singleProduct;
+  const {
+    images = [""],
+    name,
+    brand,
+    subCategory,
+    price,
+    size = [""],
+    description,
+    ratings,
+    reviews = [""],
+  } = singleProduct;
   return (
     <>
+      <PageNavigation title={name} />
       <div className="single-product-container">
         <div className="single-product-left">
           <div className="image-grid">
             {images.map((imageUrl, index) => (
-              <img key={index} src={imageUrl} />
+              <img
+                key={index}
+                src={imageUrl}
+                onClick={() => setMainImage(index)}
+              />
             ))}
+          </div>
+          <div className="single-product-main-image">
+            <img src={images[mainImage]} alt="" />
           </div>
         </div>
         <div className="single-product-right">
@@ -48,7 +58,10 @@ export default function SingleProduct() {
             <h3>
               {name} : {brand}
             </h3>
-            <p>{subCategory}</p>
+            <p>
+              {subCategory} - <Star rating={ratings} /> ({reviews.length}{" "}
+              reviews)
+            </p>
           </div>
           <hr />
           <div className="single-product-price">
@@ -86,11 +99,13 @@ export default function SingleProduct() {
               &nbsp;Add to wishlist
             </button>
           </div>
+          <div style={{ marginTop: "2rem" }}>
+            <h3 className="single-product-description-heading">
+              Product Details:
+            </h3>
+            <p style={{ maxWidth: "600px" }}>{description}</p>
+          </div>
         </div>
-      </div>
-      <div className="single-product-description">
-        <h3 className="single-product-description-heading">Product Details:</h3>
-        <p>{description}</p>
       </div>
     </>
   );

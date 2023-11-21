@@ -1,0 +1,17 @@
+.page-navigation-div {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+  font-weight: 700;
+  border-bottom: 1px solid #d3d3d3;
+  color: var(--color-text-navbar);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Assistant", sans-serif;
+}
+
+.page-navigation-home a {
+  color: var(--color-green);
+  font-family: "Assistant", sans-serif;
+}
