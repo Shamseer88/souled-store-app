@@ -22,7 +22,7 @@ export default function Profile() {
 
   return (
     <div className="profile" onClick={() => setShowModal(!showModal)}>
-      <SlUser size={20} className="navbar-icons" />
+      <SlUser size={16} className="navbar-icons" />
       <h6 className="profile-name">
         {isUserLoggedIn ? `Welcome, ${loginUsername.replace(/"/g, "")}` : ""}
       </h6>

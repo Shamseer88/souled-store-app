@@ -75,21 +75,6 @@ export default function SingleProduct() {
               ))}
             </div>
           </div>
-          <div className="single-product-quantity">
-            <label htmlFor="quantity">Quantity : </label>
-            <select name="quantity" id="quantity">
-              <option value="1">01</option>
-              <option value="2">02</option>
-              <option value="3">03</option>
-              <option value="4">04</option>
-              <option value="5">05</option>
-              <option value="6">06</option>
-              <option value="7">07</option>
-              <option value="8">08</option>
-              <option value="9">09</option>
-              <option value="10">10</option>
-            </select>
-          </div>
           <div className="cart-wishlist-btns">
             <button className="single-product-add-to-cart-btn">
               Add to cart

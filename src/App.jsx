@@ -8,12 +8,14 @@ import Women from "./Pages/Women/Women";
 import SignIn from "./Pages/Auth/SignIn";
 import SignUp from "./Pages/Auth/SignUp";
 import SingleProduct from "./Pages/SingleProduct/SingleProduct";
+import NavbarBottom from "./Components/Navbar/NavbarBottom/NavbarBottom";
 
 export default function App() {
   return (
     <>
       <TopNavbar />
-      <BottomNavbar />
+      {/* <BottomNavbar /> */}
+      <NavbarBottom />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/men" element={<Men />} />

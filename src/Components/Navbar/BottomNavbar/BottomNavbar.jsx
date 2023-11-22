@@ -1,6 +1,7 @@
 import "./BottomNavbar.css";
 import { SlHandbag, SlHeart } from "react-icons/sl";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../../Provider/UserProvider";
 import Profile from "../../Profile/Profile";
@@ -23,6 +24,7 @@ export default function BottomNavbar() {
           className="hamburger-mewnu"
         />
       </div>
+      <AiOutlineClose />
       <div className="right">
         <input type="text" placeholder="Search..." />
         <Profile />
