@@ -1,9 +1,14 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./ProductCard.css";
 
-export default function ProductCard(props) {
-  const { _id, name, displayImage, brand, price } = props.product;
-  //   const navigate = useNavigate();
+export default function ProductCard({ product }) {
+  const {
+    _id = "",
+    name = "",
+    displayImage = "",
+    brand = "",
+    price = 0,
+  } = product;
   return (
     <NavLink to={`/single-product/${_id}`}>
       <div className="product-card">
