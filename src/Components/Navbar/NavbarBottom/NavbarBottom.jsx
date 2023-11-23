@@ -13,10 +13,10 @@ export default function NavbarBottom() {
   return (
     <header>
       <nav ref={navRef}>
-        <p>Shirt</p>
-        <p>Jeans</p>
-        <p>Jogger</p>
-        <p>Pants</p>
+        <div>Shirt</div>
+        <div>Jeans</div>
+        <div>Jogger</div>
+        <div>Pants</div>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>

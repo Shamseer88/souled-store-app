@@ -8,7 +8,7 @@ export default function PageNavigation({ title }) {
       <NavLink to="/" className="page-navigation-home">
         Home
       </NavLink>
-      /{title}
+      &nbsp; / {title}
     </div>
   );
 }

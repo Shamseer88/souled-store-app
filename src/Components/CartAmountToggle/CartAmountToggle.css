@@ -1,0 +1,19 @@
+.amount-toggle {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.amount-toggle button {
+  color: var(--color-text-navbar);
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.amount-style {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-green);
+}

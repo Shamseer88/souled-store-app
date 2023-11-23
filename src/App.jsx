@@ -9,6 +9,7 @@ import SignIn from "./Pages/Auth/SignIn";
 import SignUp from "./Pages/Auth/SignUp";
 import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 import NavbarBottom from "./Components/Navbar/NavbarBottom/NavbarBottom";
+import Cart from "./Pages/Cart/Cart";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/single-product/:id" element={<SingleProduct />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "./SingleProduct.css";
 import { FaRegHeart } from "react-icons/fa6";
-import { useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useProductContext } from "../../Provider/ProductContext";
 import PageNavigation from "../../Components/PageNavigation/PageNavigation";
 import Loader from "../../Components/Loader/Loader";
 import Star from "../../Components/Star/Star";
+import AddToCart from "../../Components/AddToCart/AddToCart";
 
 const API = "https://academics.newtonschool.co/api/v1/ecommerce/product/";
 
@@ -15,6 +16,8 @@ export default function SingleProduct() {
     useProductContext();
   const { id } = useParams();
   console.log("Product id", id);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSingleProduct(`${API}${id}`);
@@ -75,8 +78,12 @@ export default function SingleProduct() {
               ))}
             </div>
           </div>
+          <AddToCart />
           <div className="cart-wishlist-btns">
-            <button className="single-product-add-to-cart-btn">
+            <button
+              className="single-product-add-to-cart-btn"
+              onClick={() => navigate("/cart")}
+            >
               Add to cart
             </button>
             <button className="single-product-add-to-wishlist-btn">

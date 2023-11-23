@@ -15,12 +15,16 @@ header nav {
   color: var(--color-text-navbar);
 }
 
-header nav p {
+header nav div {
   cursor: pointer;
+  transition: all 0.3 ease;
+  border: 3px solid transparent;
+  padding: 1rem 0;
 }
 
-header nav p:hover {
-  color: var(--color-green);
+header nav div:hover {
+  color: var(--color-red-primary);
+  border-bottom: 3px solid var(--color-red-primary);
 }
 
 header .nav-btn {
