@@ -8,3 +8,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.all-heading {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-text-navbar);
+}

@@ -5,7 +5,7 @@ import "./FeatureProduct.css";
 
 export default function FeatuteProducts() {
   const { isLoading, trendingProducts } = useProductContext();
-  console.log("trending", trendingProducts);
+
   if (isLoading) {
     return <Loader />;
   }
