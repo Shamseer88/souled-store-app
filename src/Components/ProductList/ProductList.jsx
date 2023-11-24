@@ -8,8 +8,8 @@ export default function ProductList() {
     <>
       <div className="product-list">
         {filter_products &&
-          filter_products.map((product, index) => (
-            <ProductCard key={index} product={product} />
+          filter_products.map((product) => (
+            <ProductCard key={product._id} product={product} />
           ))}
       </div>
     </>

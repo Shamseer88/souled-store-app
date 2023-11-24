@@ -7,7 +7,11 @@ const FilterContext = createContext();
 const initialState = {
   filter_products: [],
   all_products: [],
-  soting_value: "lowest",
+  sorting_value: "",
+  filters: {
+    text: "",
+    subCategory: "all",
+  },
 };
 
 export const FilterContextProvider = ({ children }) => {
@@ -15,19 +19,29 @@ export const FilterContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Sorting function
-  const sorting = () => {
-    dispatch({ type: "GET_SORT_VALUE" });
+  const sorting = (event) => {
+    let userValue = event.target.value;
+    dispatch({ type: "GET_SORT_VALUE", payload: userValue });
+  };
+
+  // Update filter values updateFilterValue
+  const updateFilterValue = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+
+    return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
   };
 
   useEffect(() => {
-    dispatch({ type: "SORTING_PRODUCTS", payload: products });
-  }, [state.sorting_value]);
+    dispatch({ type: "FILTER_PRODUCTS" });
+    dispatch({ type: "SORTING_PRODUCTS" });
+  }, [products, state.sorting_value, state.filters]);
 
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
   return (
-    <FilterContext.Provider value={{ ...state, sorting }}>
+    <FilterContext.Provider value={{ ...state, sorting, updateFilterValue }}>
       {children}
     </FilterContext.Provider>
   );

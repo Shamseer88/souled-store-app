@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Profile from "../../Profile/Profile";
 import { SlHeart } from "react-icons/sl";
 import CartComponent from "../../CartComponent/CartComponent";
+import Searchbar from "../../SearchBar/Searchbar";
 
 export default function NavbarBottom() {
   const navRef = useRef();
@@ -11,7 +12,7 @@ export default function NavbarBottom() {
     navRef.current.classList.toggle("responsive-nav");
   };
   return (
-    <header>
+    <header className="bottom-navbar">
       <nav ref={navRef}>
         <div>Shirt</div>
         <div>Jeans</div>
@@ -25,7 +26,7 @@ export default function NavbarBottom() {
         <FaBars />
       </button>
       <div className="navbar-bottom-right">
-        <input type="text" placeholder="Search..." />
+        <Searchbar />
         <Profile />
         <SlHeart size={16} className="navbar-icons" />
         <CartComponent />

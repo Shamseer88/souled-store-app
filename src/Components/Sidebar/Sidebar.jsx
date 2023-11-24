@@ -1,5 +1,38 @@
+import { useFilterContext } from "../../Provider/filter_context";
 import "./Sidebar.css";
 
 export default function Sidebar() {
-  return <div>Sidebar</div>;
+  const {
+    all_products,
+    updateFilterValue,
+    filters: { subCategory },
+  } = useFilterContext();
+  // To get unique categories
+  const getUniqueData = (data, property) => {
+    let newVal = data.map((curEle) => {
+      return curEle[property];
+    });
+    return (newVal = ["All", ...new Set(newVal)]);
+  };
+  const categoryOnlyData = getUniqueData(all_products, "subCategory");
+  return (
+    <div className="sidebar-div">
+      <div className="sidebar-category">
+        <h3>Catgory</h3>
+        {categoryOnlyData.map((curEle, index) => {
+          return (
+            <button
+              key={index}
+              type="button"
+              name="subCategory"
+              value={curEle}
+              onClick={updateFilterValue}
+            >
+              {curEle}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
 }

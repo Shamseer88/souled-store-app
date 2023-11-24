@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
     try {
       const response = await axios.get(url, {
         params: {
-          limit: 200,
+          limit: 500,
         },
         headers: {
           projectId: "ulwb3huij7ys",

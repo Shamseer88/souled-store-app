@@ -1,10 +1,15 @@
-header {
+.bottom-navbar {
   box-shadow: var(--box-shadow-primary);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 65px;
   padding: 0 3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #fff;
 }
 
 header nav {
