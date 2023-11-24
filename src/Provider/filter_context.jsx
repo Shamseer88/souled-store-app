@@ -11,6 +11,7 @@ const initialState = {
   filters: {
     text: "",
     subCategory: "all",
+    brand: "all",
   },
 };
 
