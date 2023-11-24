@@ -1,8 +1,6 @@
 .product-container {
   display: grid;
   grid-template-columns: 0.2fr 1fr;
-  /* max-width: 120rem;
-  margin: 0 auto; */
 }
 .product-list {
   display: flex;

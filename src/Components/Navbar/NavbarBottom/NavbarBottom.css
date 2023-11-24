@@ -27,10 +27,10 @@ header nav div {
   padding: 1rem 0;
 }
 
-header nav div:hover {
+/* header nav div:hover {
   color: var(--color-red-primary);
   border-bottom: 3px solid var(--color-red-primary);
-}
+} */
 
 header .nav-btn {
   padding: 5px;

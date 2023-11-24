@@ -1,0 +1,38 @@
+.sidebar-div {
+  padding: 0 3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 75px;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.sidebar-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10px;
+}
+
+.sidebar-div h3 {
+  color: var(--color-text-navbar);
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-category button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text-navbar);
+  text-transform: capitalize;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+}
+
+.sidebar-category button:hover {
+  color: var(--color-red-primary);
+  border-bottom: 2px solid var(--color-red-primary);
+}

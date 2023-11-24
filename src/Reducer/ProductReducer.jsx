@@ -8,7 +8,7 @@ const ProductReducer = (state, action) => {
 
     case "SET_API_DATA":
       const trendingData = action.payload.filter((curElement) => {
-        return curElement.brand === "Belliskey";
+        return curElement.sellerTag === "new arrival";
       });
       return {
         ...state,

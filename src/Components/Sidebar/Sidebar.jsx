@@ -17,8 +17,8 @@ export default function Sidebar() {
   const categoryOnlyData = getUniqueData(all_products, "subCategory");
   return (
     <div className="sidebar-div">
+      <h3>Catgory</h3>
       <div className="sidebar-category">
-        <h3>Catgory</h3>
         {categoryOnlyData.map((curEle, index) => {
           return (
             <button
