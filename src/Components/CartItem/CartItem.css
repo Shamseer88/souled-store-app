@@ -32,3 +32,12 @@
   font-weight: 700;
   font-size: 0.9rem;
 }
+
+.cart-delete-icon {
+  color: var(--color-red-primary);
+  cursor: pointer;
+}
+
+.cart-delete-icon:hover {
+  color: var(--color-red-secondary);
+}

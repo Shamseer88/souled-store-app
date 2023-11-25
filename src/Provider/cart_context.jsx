@@ -1,9 +1,20 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "../Reducer/cartReducer";
 
 const CartContext = createContext();
+
+const getLocalCartData = () => {
+  let localCartData = localStorage.getItem("ecom-cart");
+  if (localCartData == []) {
+    return [];
+  } else {
+    return JSON.parse(localCartData);
+  }
+};
+
 const initialState = {
-  cart: [],
+  // cart: [],
+  cart: getLocalCartData(),
   total_item: "",
   total_amount: "",
 };
@@ -17,6 +28,11 @@ const CartProvider = ({ children }) => {
   const removeItemFromCart = (id) => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
+
+  // To add cart items in localStorage
+  useEffect(() => {
+    localStorage.setItem("ecom-cart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   return (
     <CartContext.Provider value={{ ...state, addToCart, removeItemFromCart }}>
