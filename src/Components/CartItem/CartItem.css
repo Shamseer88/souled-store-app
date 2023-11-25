@@ -1,0 +1,34 @@
+.cart-image-name {
+  margin-bottom: 0.75rem;
+}
+
+.cart-image-name p {
+  color: var(--color-text-navbar);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cart-container-body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+}
+
+.cart-responsive-price {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .cart-responsive-price {
+    display: block;
+  }
+  .cart-container-body {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cart-item-price,
+.cart-total {
+  color: var(--color-text-navbar);
+  font-weight: 700;
+  font-size: 0.9rem;
+}

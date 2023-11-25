@@ -78,14 +78,8 @@ export default function SingleProduct() {
               ))}
             </div>
           </div>
-          <AddToCart />
+          <AddToCart product={singleProduct} />
           <div className="cart-wishlist-btns">
-            <button
-              className="single-product-add-to-cart-btn"
-              onClick={() => navigate("/cart")}
-            >
-              Add to cart
-            </button>
             <button className="single-product-add-to-wishlist-btn">
               <FaRegHeart size={12} />
               &nbsp;Add to wishlist

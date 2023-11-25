@@ -5,13 +5,16 @@ import { BrowserRouter } from "react-router-dom";
 import UserProvider from "./Provider/UserProvider.jsx";
 import { AppProvider } from "./Provider/ProductContext.jsx";
 import { FilterContextProvider } from "./Provider/filter_context.jsx";
+import { CartProvider } from "./Provider/cart_context.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserProvider>
       <AppProvider>
         <FilterContextProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </FilterContextProvider>
       </AppProvider>
     </UserProvider>
