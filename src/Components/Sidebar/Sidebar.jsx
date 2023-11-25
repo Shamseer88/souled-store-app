@@ -1,4 +1,5 @@
 import { useFilterContext } from "../../Provider/filter_context";
+import Searchbar from "../SearchBar/Searchbar";
 import "./Sidebar.css";
 
 export default function Sidebar() {
@@ -19,6 +20,9 @@ export default function Sidebar() {
   console.log("comapanies", companyData);
   return (
     <div className="sidebar-div">
+      <div className="sidebar-search">
+        <Searchbar />
+      </div>
       <h3>Catgory</h3>
       <div className="sidebar-category">
         {categoryOnlyData.map((curEle, index) => {

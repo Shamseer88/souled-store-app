@@ -13,10 +13,10 @@ const getLocalCartData = () => {
 };
 
 const initialState = {
-  // cart: [],
   cart: getLocalCartData(),
   total_item: "",
   total_amount: "",
+  total_price: 0,
 };
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -25,17 +25,41 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "ADD_TO_CART", payload: { id, amount, product } });
   };
 
+  // Cart increase decrease
+  const setDecrease = (id) => {
+    dispatch({ type: "SET_DECREASE", payload: id });
+  };
+  const setIncrease = (id) => {
+    dispatch({ type: "SET_INCREASE", payload: id });
+  };
+
   const removeItemFromCart = (id) => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
 
   // To add cart items in localStorage
   useEffect(() => {
+    dispatch({ type: "CART_TOTAL_ITEM" });
+    dispatch({ type: "CART_TOTAL_PRICE" });
     localStorage.setItem("ecom-cart", JSON.stringify(state.cart));
   }, [state.cart]);
 
+  // To clear cart
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+
   return (
-    <CartContext.Provider value={{ ...state, addToCart, removeItemFromCart }}>
+    <CartContext.Provider
+      value={{
+        ...state,
+        addToCart,
+        removeItemFromCart,
+        clearCart,
+        setDecrease,
+        setIncrease,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

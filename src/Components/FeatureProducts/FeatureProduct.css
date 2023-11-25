@@ -48,3 +48,8 @@
   text-align: center;
   margin: 3rem;
 }
+
+.feature-product-carousal {
+  width: 90%;
+  margin: auto;
+}

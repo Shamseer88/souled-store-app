@@ -36,11 +36,13 @@ export default function FeatuteProducts() {
   return (
     <>
       <h2 className="featured-heading">New Arrivals</h2>
-      <Carousel responsive={responsive} centerMode={true}>
-        {trendingProducts.map((product) => (
-          <ProductCard product={product} key={product._id} />
-        ))}
-      </Carousel>
+      <div className="feature-product-carousal">
+        <Carousel responsive={responsive}>
+          {trendingProducts.map((product) => (
+            <ProductCard product={product} key={product._id} />
+          ))}
+        </Carousel>
+      </div>
     </>
   );
 }

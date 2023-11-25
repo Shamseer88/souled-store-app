@@ -30,10 +30,6 @@ export default function NavbarBottom() {
   return (
     <header className="bottom-navbar">
       <nav ref={navRef}>
-        {/* <div>Shirt</div>
-        <div>Jeans</div>
-        <div>Jogger</div>
-        <div>Pants</div> */}
         <div className="header-nav">
           {categoryOnlyData.map((curEle, index) => {
             return (

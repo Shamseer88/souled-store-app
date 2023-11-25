@@ -1,8 +1,18 @@
 .cart-component {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .cart-component span {
   margin-top: -5px;
-  color: var(--color-red-primary);
+  margin-left: -5px;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 1px 3px;
+  font-weight: 700;
+  border-radius: 50%;
+  color: #fff;
+  align-items: center;
+  background-color: var(--color-red-primary);
 }

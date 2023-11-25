@@ -9,9 +9,10 @@
 
 .sidebar-category {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: left;
-  gap: 10px;
+  gap: 5px;
 }
 
 .sidebar-div h3 {
@@ -29,7 +30,8 @@
   cursor: pointer;
   font-size: 0.9rem;
   border-bottom: 2px solid transparent;
-  font-weight: 600;
+  font-weight: 500;
+  width: 50%;
 }
 
 .sidebar-category button:hover {
@@ -42,4 +44,8 @@
 }
 .sidebar-company h3 {
   color: var(--color-text-navbar);
+}
+
+.sidebar-search {
+  margin-bottom: 2rem;
 }

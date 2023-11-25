@@ -4,13 +4,8 @@ import "./CartItem.css";
 import { useCartContext } from "../../Provider/cart_context";
 
 export default function CartItem({ id, name, price, amount, image }) {
-  const { removeItemFromCart } = useCartContext();
-  const setDecrease = () => {
-    // amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  };
-  const setIncrease = () => {
-    // setAmount(amount + 1);
-  };
+  const { removeItemFromCart, setDecrease, setIncrease } = useCartContext();
+
   return (
     <div className=".cart-container">
       <div className="cart-container-body">
